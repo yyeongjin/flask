@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        function pwChk()
+            {
+                if(document.frm1.pw.value == "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세"){
+                    alert("Success!")
+                    return true
+                }
+                else{
+                    alert("Failed!")
+                    return false
+                }
+            }
+    </script>
+    <link rel="stylesheet" href="static/css/style.css">
+  </head>
+  <body>
+    <div class="content">
+      <h1>Upload your files to the AWS S3 Bucket</h1>
+      <div>
+        <h3>Upload your file here:</h3>
+        <form method="POST" action="/upload" enctype="multipart/form-data" name="frm1">
+          <input type="file" name="file">
+          <INPUT type="text" size=12 name="pw">
+          <input type="submit" value="전송" onclick="return pwChk()">
+        </form>
+      </div>
+    </div>
+    <br/>
+    <h4> How to upload a file</h4>
+    <h4> 1. Select file</h4>
+    <h4> 2. Fill in the following information in the square.</h4>
+    <img src="{{url_for('static', filename='img/image.png')}}">
+    <h4> 3. Click the right button.</h4>
+
+  </body>
+</html>
